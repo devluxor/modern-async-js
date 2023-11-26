@@ -248,7 +248,7 @@ srcArr[Symbol.asyncIterator] = function() {
 // â‡’ Anna
 ```
 
-When we run this code, the JavaScript engine executes the `Symbol.asyncIterator` method of the object to obtain an asynchronous iterator. With each iteration of the loop, the iterator executes the `next()` method and returns a promise (this happens behind the scenes). As soon as the promise is fulfilled, the value of the value property is assigned to url.
+When we run this code, the JavaScript engine executes the `Symbol.asyncIterator` method of the object to obtain an asynchronous iterator. With each iteration of the loop, the iterator executes the `next()` method and returns a promise (this happens behind the scenes). As soon as the promise is fulfilled, the value of the value property is assigned to `url`.
 
 It’s a common practice to enclose `for...await...of` in a `try...catch` statement. This way when a promise rejects, we can gracefully handle the rejection.
 

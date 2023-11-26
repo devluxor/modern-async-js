@@ -149,6 +149,8 @@ getCommits('https://api.github.com/repos/tc39/proposal-temporal/commits');
 
 The takeaway from this example is that asynchronous generators allow us to smoothly and continuously make several network requests and iterate over the results.
 
+## Other
+
 Another interesting use case for asynchronous generator would be fetching images from a photo sharing website like Flickr. The Flickr API provides an endpoint for fetching images based on given keywords. With an async generator function, you can fetch and navigate the batches asynchronously. Using an async generator would also open up the possibility to seamlessly aggregate photos from several sources.
 
 >Asynchronous iterators provide an alternative to 'data' events on streams in Node and can be used to represent a stream of user input events in client-side JavaScript.

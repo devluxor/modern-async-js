@@ -49,6 +49,8 @@ signal.addEventListener('abort', () => {
 // logs: true 
 ```
 
+## Custom `fetch` maker
+
 We can create a custom `fetchWithTimeout` maker function to add an abort interface to every request automatically:
 
 ```js
@@ -219,7 +221,7 @@ abortBtn.addEventListener('click', () => controller.abort());
 
 > Blob stands for binary large object, which is a data type containing a collection of binary data. In JavaScript, Blob serves as an essential data interchange method for several APIs. They’re often used when working with data that isn’t in a JavaScript- native format, such as images, audio, or other multimedia objects.
 
-## Aboorting Multiple Fetch Requests with One Signal
+## Aborting Multiple Fetch Requests with One Signal
 
 Just as we can abort multiple `addEventListener()` methods, we can abort multiple fetch requests with a single `AbortSignal`.
 
@@ -293,6 +295,8 @@ loadBtn.addEventListener('click', async () => {
 // every task linked to the controller (all) will be aborted
 abortBtn.addEventListener('click', () => controller.abort());
 ```
+
+## Other
 
 Another use case for `abort()` could be live search: when the user types a character in the input, it triggers a search request; when that promise resolves, you want to show the search results. But if the user presses multiple keys, the first search might resolve before the last. Aborting the “stale” request ensures that the search results reflect the most recent query.
 

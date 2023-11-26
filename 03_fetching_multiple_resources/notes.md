@@ -86,6 +86,8 @@ Promise.all(promises).
 We’ve applied the `map()` method to an iterable of promises. Within the method, we use `catch()` to return promises that resolve with an error value. This way, we can simulate the behavior of `Promise.allSettled()` while being able to
 directly access the result of promises.
 
+## Other
+
 You may find yourself in a situation where you need to read a local file, retrieve a JSON document from a web API, and load an XML document from another API. Once you obtain data from all three async requests, you want to process them. `Promise.all()` and `Promise.allSettled()` are ideal for such scenarios.
 
 You will want to use these methods only when you need to process the result of multiple async requests together. If it’s possible to process the result of each async request individually, then handle each promise with its own `then()` handler. This way, you can execute your code as soon as each promise is resolved.

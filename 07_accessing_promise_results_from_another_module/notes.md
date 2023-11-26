@@ -2,7 +2,7 @@
 
 Often in modular programs, you need the result from another module before you run the main module.
 
-Top-level await is an addition to the language that provides a straightforward way to use the `await` keyword outside of `async` functions so that we can perform async tasks directly at the top level of the module.
+Top-level await is an addition to the language that provides a straightforward way to use the `await` keyword outside `async` functions so that we can perform async tasks directly at the top level of the module.
 
 Keep in mind you can’t use top-level await in classic scripts—it only works in module scripts and browser dev tools. If you get a `SyntaxError` (`await is only valid async functions...`), that means you’re not using it in a module.
 
@@ -131,6 +131,6 @@ import {dbConnector} from './utilities.js';
 const connection = await dbConnector.connect();
 ```
 
-By using top-level await, we can make the module behave like a big async function. We can now represent resources with await and handle errors if the module can’t be used. 
+By using top-level await, we can make the module behave like a big async function. We can now represent resources with `await` and handle errors if the module can’t be used. 
 
 Remember, a module won’t start evaluating its body until the module that’s being imported has finished executing its body. So if the other module has a top-level `await`, it must be completed before the module that’s importing it begins executing.
