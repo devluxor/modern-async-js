@@ -44,7 +44,7 @@ But If one of the promises in the iterable rejects, `Promise.all()` immediately 
 
 With the `Promise.allSettled()` method, we can get the result of all promises passed to the method.
 
-## Using `Promise.allSettled() `to Fetch Multiple Resources
+## Using `Promise.allSettled()` to Fetch Multiple Resources
 
 The `Promise.allSettled()` method returns a promise that resolves when all the given promises have either successfully fulfilled or rejected (“settled,” in other words). This behavior is very useful to track multiple asynchronous tasks that are not dependent on one another to complete.
 
@@ -78,7 +78,9 @@ const promises = [
 ].map(p => p.catch(e => e)); 
 
 Promise.all(promises).
-  then((results) => results.forEach((result) => console.log(result)));
+  then((results) => {
+    results.forEach((result) => console.log(result))
+  });
 ```
 
 We’ve applied the `map()` method to an iterable of promises. Within the method, we use `catch()` to return promises that resolve with an error value. This way, we can simulate the behavior of `Promise.allSettled()` while being able to
@@ -94,3 +96,4 @@ While `Promise.all()` is very strict in its execution policy, `Promise.allSettle
 - `Promise.allSettled()` is more suitable for async tasks that might fail but are not essential for your program to function.
 
 As of ES2021, the ECMAScript standard includes one more method for the promise object: `Promise.any()`. This method is the opposite of `Promise.all()`.
+
